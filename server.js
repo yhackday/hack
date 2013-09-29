@@ -1,3 +1,9 @@
+var express = require('express');
+var hbs = require('express3-handlebars');
+var app = express();
+app.engine('handlebars', hbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
 // Authenticate via OAuth
 var tumblr = require('tumblr.js');
 var client = tumblr.createClient({
